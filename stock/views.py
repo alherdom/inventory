@@ -7,4 +7,4 @@ from .models import Product, Item, Location
 
 def inventory(request: HttpRequest) -> HttpResponse:
     products = Product.objects.all()
-    return render(request, "index.html", dict(products=products))
+    return render(request, "inventory.html", dict(products=products))
