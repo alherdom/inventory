@@ -1,12 +1,28 @@
 {% extends "base.html" %}
 {% block title %}Index{% endblock %}
 {% block content%}
-    {% for product in products %}
-        <p>{{ product.code }}</p>
-        <p>{{ product.name }}</p>
-        <p>{{ product.description }}</p>
-        <p>{{ product.brand }}</p>
-        <p>{{ product.model }}</p>
-        <p>{{ product.image }}</p>
-    {% endfor %}
+<table>
+    <thead>
+    <tr>
+        <th>Code</th>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Brand</th>
+        <th>Model</th>
+        <th>Image</th>
+    </tr>
+    </thead>
+    <tbody>
+        {% for product in products %}
+        <tr>
+            <td>{{ product.code }}</td>
+            <td>{{ product.name }}</td>
+            <td>{{ product.description }}</td>
+            <td>{{ product.brand }}</td>
+            <td>{{ product.model }}</td>
+            <td>{{ product.image }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}

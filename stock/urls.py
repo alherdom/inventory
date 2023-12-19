@@ -5,5 +5,5 @@ from . import views
 app_name = "stock"
 
 urlpatterns = [
-    path("",views.check_code, name="inventory")
+    path("",views.inventory, name="inventory")
 ]

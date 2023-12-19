@@ -5,6 +5,6 @@ from django.core.paginator import Paginator
 from .models import Product, Item, Location
 
 
-def check_code(request: HttpRequest) -> HttpResponse:
+def inventory(request: HttpRequest) -> HttpResponse:
     products = Product.objects.all()
     return render(request, "index.html", dict(products=products))
