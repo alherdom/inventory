@@ -2,6 +2,7 @@ import random
 import string
 
 
-def code_generator() -> str:
+def code_generator(code_length) -> str:
     string_code = string.digits + string.ascii_uppercase
-    return f"{random.choice(string_code)}{random.choice(string_code)}{random.choice(string_code)}"
+    code = "".join(random.choice(string_code) for _ in range(code_length))
+    return code

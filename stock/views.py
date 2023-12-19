@@ -7,4 +7,4 @@ from .models import Product, Item, Location
 
 def check_code(request: HttpRequest) -> HttpResponse:
     products = Product.objects.all()
-    return render(request, "index.html")
+    return render(request, "index.html", dict(products=products))
