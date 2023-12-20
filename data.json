@@ -1,0 +1,59 @@
+{
+    "products": [
+        {
+            "code": "123456",
+            "name": "Product 1",
+            "description": "Description 1",
+            "brand": "Brand 1",
+            "model": "Model 1",
+            "image": "image1.png"
+        },
+        {
+            "code": "654321",
+            "name": "Product 2",
+            "description": "Description 2",
+            "brand": "Brand 2",
+            "model": "Model 2",
+            "image": "image2.png"
+        },
+        {
+            "code": "854322",
+            "name": "Product 3",
+            "description": "Description 3",
+            "brand": "Brand 3",
+            "model": "Model 3",
+            "image": "image3.png"
+        }
+    ],
+    "locations": [
+        {
+            "name": "Location 1",
+            "description": "Description 1"
+        },
+        {
+            "name": "Location 2",
+            "description": "Description 2"
+        },
+        {
+            "name": "Location 3",
+            "description": "Description 3"
+        }
+    ],
+    "items": [
+        {
+            "serial": "223456",
+            "product": "123456",
+            "location": "Location 1"
+        },
+        {
+            "serial": "554321",
+            "product": "654321",
+            "location": "Location 2"
+        },
+        {
+            "serial": "954322",
+            "product": "854322",
+            "location": "Location 3"
+        }
+    ]
+}

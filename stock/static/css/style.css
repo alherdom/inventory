@@ -32,3 +32,67 @@ body {
 .container p input {
     font-size: 2em;
 }
+
+.td-image {
+    background-color: white;
+}
+
+.default-img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 15px;
+}
+
+th {
+    text-align: center;
+    font-weight: normal;
+    font-style: italic;
+    font-size: 1.5em;
+}
+
+td {
+    text-align: center;
+    padding: 10px;
+    background-color: #347BCC;
+    background-color: lightgreen;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    margin-top: -50px;
+    margin-left: 470px;
+}
+
+.search-input {
+    padding: 8px;
+    border-radius: 0px;
+    border: 2px solid black;
+    height: 20px;
+}
+
+.search-button {
+    padding: 8px;
+    color: white;
+    cursor: pointer;
+    background-color: white;
+    border: 2px solid black;
+    border-radius: 0px;
+    height: 40px;
+    margin-left: -5px;
+}
+
+.search-button:hover {
+    background-color: #347BCC;
+    background-color: lightgreen;
+}
+
+.search-button:active {
+    background-color: #333;
+}

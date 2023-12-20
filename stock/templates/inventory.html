@@ -1,28 +1,38 @@
 {% extends "base.html" %}
+{% load thumbnail %}
 {% load static %}
 {% block title %}Inventory{% endblock %}
 {% block content %}
+<h1>Inventory</h1>
+<div class="search-container">
+    <input type="text" class="search-input" placeholder="">
+    <button type="button" class="search-button"><span class="loupe">🔍</span></button>
+</div>
 <table>
     <thead>
     <tr>
         <th>Code</th>
         <th>Name</th>
-        <th>Description</th>
         <th>Brand</th>
         <th>Model</th>
+        <th>Location</th>
+        <th>Serial</th>
         <th>Image</th>
     </tr>
     </thead>
     <tbody>
-        {% for product in products %}
-        <tr>
-            <td>{{ product.code }}</td>
-            <td>{{ product.name }}</td>
-            <td>{{ product.description }}</td>
-            <td>{{ product.brand }}</td>
-            <td>{{ product.model }}</td>
-            <td>{{ product.image }}</td>
-        </tr>
+        {% for item in items %}
+            <tr>
+                <td>{{ item.code }}</td>
+                <td>{{ item.product.name }}</td>
+                <td>{{ item.product.brand }}</td>
+                <td>{{ item.product.model }}</td>
+                <td>{{ item.location.name }}</td>
+                <td>{{ item.serial }}</td>
+                <td class="td-image">
+                <img {% if item.product.image %} src="{% thumbnail item.product.image 180x180 %}" {% else %} src="{% static "img/default_image.png" %}" {% endif %} class="default-img" alt="product image" />          
+                </td>
+            </tr>
         {% endfor %}
     </tbody>
 </table>
