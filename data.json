@@ -1,59 +1,602 @@
-{
-    "products": [
-        {
-            "code": "123456",
-            "name": "Product 1",
-            "description": "Description 1",
-            "brand": "Brand 1",
-            "model": "Model 1",
-            "image": "image1.png"
-        },
-        {
-            "code": "654321",
-            "name": "Product 2",
-            "description": "Description 2",
-            "brand": "Brand 2",
-            "model": "Model 2",
-            "image": "image2.png"
-        },
-        {
-            "code": "854322",
-            "name": "Product 3",
-            "description": "Description 3",
-            "brand": "Brand 3",
-            "model": "Model 3",
-            "image": "image3.png"
+[
+    {
+        "model": "stock.product",
+        "pk": 1,
+        "fields": {
+            "code": "P001",
+            "name": "Producto A",
+            "description": "Descripción del Producto A",
+            "brand": "Marca A",
+            "model": "Modelo A"
         }
-    ],
-    "locations": [
-        {
-            "name": "Location 1",
-            "description": "Description 1"
-        },
-        {
-            "name": "Location 2",
-            "description": "Description 2"
-        },
-        {
-            "name": "Location 3",
-            "description": "Description 3"
+    },
+    {
+        "model": "stock.location",
+        "pk": 1,
+        "fields": {
+            "name": "Almacén A",
+            "slug": "almacen-a",
+            "description": "Descripción del Almacén A"
         }
-    ],
-    "items": [
-        {
-            "serial": "223456",
-            "product": "123456",
-            "location": "Location 1"
-        },
-        {
-            "serial": "554321",
-            "product": "654321",
-            "location": "Location 2"
-        },
-        {
-            "serial": "954322",
-            "product": "854322",
-            "location": "Location 3"
+    },
+    {
+        "model": "stock.item",
+        "pk": 1,
+        "fields": {
+            "code": "I001",
+            "serial": "S001",
+            "location": 1,
+            "product": 1
         }
-    ]
-}
+    },
+    {
+        "model": "stock.product",
+        "pk": 2,
+        "fields": {
+            "code": "P002",
+            "name": "Producto B",
+            "description": "Descripción del Producto B",
+            "brand": "Marca B",
+            "model": "Modelo B"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 2,
+        "fields": {
+            "name": "Almacén B",
+            "slug": "almacen-b",
+            "description": "Descripción del Almacén B"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 2,
+        "fields": {
+            "code": "I002",
+            "serial": "S002",
+            "location": 2,
+            "product": 2
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 3,
+        "fields": {
+            "code": "P003",
+            "name": "Producto C",
+            "description": "Descripción del Producto C",
+            "brand": "Marca C",
+            "model": "Modelo C"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 3,
+        "fields": {
+            "name": "Almacén C",
+            "slug": "almacen-c",
+            "description": "Descripción del Almacén C"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 3,
+        "fields": {
+            "code": "I003",
+            "serial": "S003",
+            "location": 3,
+            "product": 3
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 4,
+        "fields": {
+            "code": "P004",
+            "name": "Producto D",
+            "description": "Descripción del Producto D",
+            "brand": "Marca D",
+            "model": "Modelo D"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 4,
+        "fields": {
+            "name": "Almacén D",
+            "slug": "almacen-d",
+            "description": "Descripción del Almacén D"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 4,
+        "fields": {
+            "code": "I004",
+            "serial": "S004",
+            "location": 4,
+            "product": 4
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 5,
+        "fields": {
+            "code": "P005",
+            "name": "Producto E",
+            "description": "Descripción del Producto E",
+            "brand": "Marca E",
+            "model": "Modelo E"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 5,
+        "fields": {
+            "name": "Almacén E",
+            "slug": "almacen-e",
+            "description": "Descripción del Almacén E"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 5,
+        "fields": {
+            "code": "I005",
+            "serial": "S005",
+            "location": 5,
+            "product": 5
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 6,
+        "fields": {
+            "code": "P006",
+            "name": "Producto F",
+            "description": "Descripción del Producto F",
+            "brand": "Marca F",
+            "model": "Modelo F"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 6,
+        "fields": {
+            "name": "Almacén F",
+            "slug": "almacen-f",
+            "description": "Descripción del Almacén F"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 6,
+        "fields": {
+            "code": "I006",
+            "serial": "S006",
+            "location": 6,
+            "product": 6
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 7,
+        "fields": {
+            "code": "P007",
+            "name": "Producto G",
+            "description": "Descripción del Producto G",
+            "brand": "Marca G",
+            "model": "Modelo G"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 7,
+        "fields": {
+            "name": "Almacén G",
+            "slug": "almacen-g",
+            "description": "Descripción del Almacén G"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 7,
+        "fields": {
+            "code": "I007",
+            "serial": "S007",
+            "location": 7,
+            "product": 7
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 8,
+        "fields": {
+            "code": "P008",
+            "name": "Producto H",
+            "description": "Descripción del Producto H",
+            "brand": "Marca H",
+            "model": "Modelo H"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 8,
+        "fields": {
+            "name": "Almacén H",
+            "slug": "almacen-h",
+            "description": "Descripción del Almacén H"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 8,
+        "fields": {
+            "code": "I008",
+            "serial": "S008",
+            "location": 8,
+            "product": 8
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 9,
+        "fields": {
+            "code": "P009",
+            "name": "Producto I",
+            "description": "Descripción del Producto I",
+            "brand": "Marca I",
+            "model": "Modelo I"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 9,
+        "fields": {
+            "name": "Almacén I",
+            "slug": "almacen-i",
+            "description": "Descripción del Almacén I"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 9,
+        "fields": {
+            "code": "I009",
+            "serial": "S009",
+            "location": 9,
+            "product": 9
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 10,
+        "fields": {
+            "code": "P010",
+            "name": "Producto J",
+            "description": "Descripción del Producto J",
+            "brand": "Marca J",
+            "model": "Modelo J"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 10,
+        "fields": {
+            "name": "Almacén J",
+            "slug": "almacen-j",
+            "description": "Descripción del Almacén J"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 10,
+        "fields": {
+            "code": "I010",
+            "serial": "S010",
+            "location": 10,
+            "product": 10
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 11,
+        "fields": {
+            "code": "P011",
+            "name": "Producto K",
+            "description": "Descripción del Producto K",
+            "brand": "Marca K",
+            "model": "Modelo K"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 11,
+        "fields": {
+            "name": "Almacén K",
+            "slug": "almacen-k",
+            "description": "Descripción del Almacén K"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 11,
+        "fields": {
+            "code": "I011",
+            "serial": "S011",
+            "location": 11,
+            "product": 11
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 12,
+        "fields": {
+            "code": "P012",
+            "name": "Producto L",
+            "description": "Descripción del Producto L",
+            "brand": "Marca L",
+            "model": "Modelo L"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 12,
+        "fields": {
+            "name": "Almacén L",
+            "slug": "almacen-l",
+            "description": "Descripción del Almacén L"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 12,
+        "fields": {
+            "code": "I012",
+            "serial": "S012",
+            "location": 12,
+            "product": 12
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 13,
+        "fields": {
+            "code": "P013",
+            "name": "Producto M",
+            "description": "Descripción del Producto M",
+            "brand": "Marca M",
+            "model": "Modelo M"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 13,
+        "fields": {
+            "name": "Almacén M",
+            "slug": "almacen-m",
+            "description": "Descripción del Almacén M"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 13,
+        "fields": {
+            "code": "I013",
+            "serial": "S013",
+            "location": 13,
+            "product": 13
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 14,
+        "fields": {
+            "code": "P014",
+            "name": "Producto N",
+            "description": "Descripción del Producto N",
+            "brand": "Marca N",
+            "model": "Modelo N"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 14,
+        "fields": {
+            "name": "Almacén N",
+            "slug": "almacen-n",
+            "description": "Descripción del Almacén N"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 14,
+        "fields": {
+            "code": "I014",
+            "serial": "S014",
+            "location": 14,
+            "product": 14
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 15,
+        "fields": {
+            "code": "P015",
+            "name": "Producto O",
+            "description": "Descripción del Producto O",
+            "brand": "Marca O",
+            "model": "Modelo O"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 15,
+        "fields": {
+            "name": "Almacén O",
+            "slug": "almacen-o",
+            "description": "Descripción del Almacén O"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 15,
+        "fields": {
+            "code": "I015",
+            "serial": "S015",
+            "location": 15,
+            "product": 15
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 16,
+        "fields": {
+            "code": "P016",
+            "name": "Producto P",
+            "description": "Descripción del Producto P",
+            "brand": "Marca P",
+            "model": "Modelo P"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 16,
+        "fields": {
+            "name": "Almacén P",
+            "slug": "almacen-p",
+            "description": "Descripción del Almacén P"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 16,
+        "fields": {
+            "code": "I016",
+            "serial": "S016",
+            "location": 16,
+            "product": 16
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 17,
+        "fields": {
+            "code": "P017",
+            "name": "Producto Q",
+            "description": "Descripción del Producto Q",
+            "brand": "Marca Q",
+            "model": "Modelo Q"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 17,
+        "fields": {
+            "name": "Almacén Q",
+            "slug": "almacen-q",
+            "description": "Descripción del Almacén Q"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 17,
+        "fields": {
+            "code": "I017",
+            "serial": "S017",
+            "location": 17,
+            "product": 17
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 18,
+        "fields": {
+            "code": "P018",
+            "name": "Producto R",
+            "description": "Descripción del Producto R",
+            "brand": "Marca R",
+            "model": "Modelo R"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 18,
+        "fields": {
+            "name": "Almacén R",
+            "slug": "almacen-r",
+            "description": "Descripción del Almacén R"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 18,
+        "fields": {
+            "code": "I018",
+            "serial": "S018",
+            "location": 18,
+            "product": 18
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 19,
+        "fields": {
+            "code": "P019",
+            "name": "Producto S",
+            "description": "Descripción del Producto S",
+            "brand": "Marca S",
+            "model": "Modelo S"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 19,
+        "fields": {
+            "name": "Almacén S",
+            "slug": "almacen-s",
+            "description": "Descripción del Almacén S"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 19,
+        "fields": {
+            "code": "I019",
+            "serial": "S019",
+            "location": 19,
+            "product": 19
+        }
+    },
+    {
+        "model": "stock.product",
+        "pk": 20,
+        "fields": {
+            "code": "P020",
+            "name": "Producto T",
+            "description": "Descripción del Producto T",
+            "brand": "Marca T",
+            "model": "Modelo T"
+        }
+    },
+    {
+        "model": "stock.location",
+        "pk": 20,
+        "fields": {
+            "name": "Almacén T",
+            "slug": "almacen-t",
+            "description": "Descripción del Almacén T"
+        }
+    },
+    {
+        "model": "stock.item",
+        "pk": 20,
+        "fields": {
+            "code": "I020",
+            "serial": "S020",
+            "location": 20,
+            "product": 20
+        }
+    }
+]

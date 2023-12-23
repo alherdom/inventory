@@ -96,3 +96,43 @@ td {
 .search-button:active {
     background-color: #333;
 }
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.pagination {
+    margin: 20px;
+    text-align: center;
+}
+
+.step-links {
+    display: inline-block;
+    list-style: none;
+    padding: 0;
+}
+
+.step-links a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #ddd;
+    text-decoration: none;
+    color: #333;
+    background-color: #f8f8f8;
+    cursor: pointer;
+}
+
+.step-links span.current {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 0 4px;
+    border: 1px solid #007bff;
+    color: #007bff;
+    background-color: #fff;
+}
+
+.step-links a:hover {
+    background-color: #007bff;
+    color: #fff;
+}
