@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 from .utils import code_generator
 
 CODE_LENGTH = 6
@@ -27,6 +28,7 @@ class Product(models.Model):
                 code = code_generator(CODE_LENGTH)
             self.code = code
         return super(Product, self).save(*args, **kwargs)
+
 
 
 class Location(models.Model):
@@ -61,3 +63,6 @@ class Item(models.Model):
 
     def __str__(self) -> str:
         return self.code
+
+    def get_absolute_url(self):
+        return reverse("stock:product_detail", kwargs=dict(code=self.product.code))

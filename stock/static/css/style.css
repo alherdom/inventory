@@ -58,9 +58,13 @@ th {
 td {
     text-align: center;
     padding: 10px;
-    background-color: #347BCC;
-    background-color: lightgreen;
+    color: white;
+    background-color: #007bff;
 }
+
+/* tr:hover {
+    background-color: #333;
+} */
 
 .search-container {
     display: flex;
@@ -89,21 +93,17 @@ td {
 }
 
 .search-button:hover {
-    background-color: #347BCC;
-    background-color: lightgreen;
+    background-color: #007bff;
 }
 
 .search-button:active {
     background-color: #333;
 }
 
-body {
-    font-family: Arial, sans-serif;
-}
-
 .pagination {
-    margin: 20px;
     text-align: center;
+    margin-top: 20px;
+    margin-left: -10%;
 }
 
 .step-links {
@@ -135,4 +135,19 @@ body {
 .step-links a:hover {
     background-color: #007bff;
     color: #fff;
+}
+
+.my-row-detail {
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.title-detail {
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: 10px;
 }

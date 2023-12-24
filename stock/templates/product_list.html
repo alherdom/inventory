@@ -1,14 +1,16 @@
 {% extends "base.html" %}
 {% load thumbnail %}
 {% load static %}
-{% block title %}Inventory{% endblock %}
+{% block title %}Products{% endblock %}
 {% block content %}
 <h1>Inventory</h1>
 <div class="search-container">
-  <input type="text" class="search-input" placeholder="" />
-  <button type="button" class="search-button">
-    <span class="loupe">🔍</span>
-  </button>
+  <form method="get" action={% url "stock:search" %}>
+    <input type="text" class="search-input" name="input" placeholder="Search product..." />
+    <button type="submit" class="search-button">
+      <span class="loupe">🔍</span>
+    </button>
+  </form>
 </div>
 <table>
   <thead>
@@ -25,14 +27,16 @@
   <tbody>
     {% for item in page_obj %}
     <tr>
-      <td>{{ item.code }}</td>
+      <td>
+        <a href=" {{ item.get_absolute_url }} ">{{ item.code }}</a>
+      </td>
       <td>{{ item.product.name }}</td>
       <td>{{ item.product.brand }}</td>
       <td>{{ item.product.model }}</td>
       <td>{{ item.location.name }}</td>
       <td>{{ item.serial }}</td>
       <td class="td-image">
-        <img {% if item.product.image %} src="{% thumbnail item.product.image 180x180 %}" {% else %} src="{% static "img/default_image.png" %}" {% endif %} class="default-img" alt="product image" />
+        <img {% if item.product.image %} src="{{ item.product.image.url }}" {% else %} src="{% static "img/default_image.png" %}" {% endif %} class="default-img" alt="product image" />
       </td>
     </tr>
     {% endfor %}
@@ -46,7 +50,7 @@
     {% endif %}
 
     <span class="current">
-      Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}.
+      Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}
     </span>
 
     {% if page_obj.has_next %}

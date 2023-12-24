@@ -1,10 +1,11 @@
-from django.shortcuts import render
-from django.core.paginator import Paginator
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpRequest, HttpResponse
+from django.core.paginator import Paginator
 from .models import Product, Item, Location
+from django.db.models import Q
 
 
-def inventory(request: HttpRequest) -> HttpResponse:
+def product_list(request: HttpRequest) -> HttpResponse:
     products = Product.objects.all()
     items = Item.objects.select_related("product", "location").all()
     paginator = Paginator(items, 5)
@@ -12,13 +13,14 @@ def inventory(request: HttpRequest) -> HttpResponse:
     page_obj = paginator.get_page(page_number)
     return render(
         request,
-        "inventory.html",
+        "product_list.html",
         dict(products=products, items=items, page_obj=page_obj),
     )
 
 
-def product_detail(request: HttpRequest, pk: int) -> HttpResponse:
-    product = Product.objects.get(pk=pk)
+def product_detail(request: HttpRequest, code: str) -> HttpResponse:
+    # product = Product.objects.get(code=code)
+    product = get_object_or_404(Product, code=code)
     items = Item.objects.filter(product=product)
     return render(request, "product_detail.html", dict(product=product, items=items))
 
@@ -35,6 +37,9 @@ def item_detail(request: HttpRequest, pk: int) -> HttpResponse:
 
 
 def search(request: HttpRequest) -> HttpResponse:
-    query = request.GET.get("query")
-    items = Item.objects.filter(product__name__icontains=query)
-    return render(request, "search.html", dict(items=items, query=query))
+    query = request.GET.get("input", "")
+    print("Query:", query)
+    # items = Item.objects.select_related("product", "location").filter(product__name__icontains=query)
+    products = Product.objects.filter(name__icontains=query)
+    # print("SQL Query:", str(items.query))
+    return render(request, "search.html", dict(products=products, query=query))

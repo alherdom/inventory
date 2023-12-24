@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load thumbnail %}
+{% load static %}
+{% block title %}Product Detail{% endblock %}
+{% block content %}
+<div class="title-detail">
+    <h1>Product: {{ product.code }}</h1>
+</div>
+<div class="my-row-detail">
+    <div>
+        <img class="td-image" src="{% thumbnail product.image 300x300 %}" alt="teacher image">
+    </div>
+    <div>
+        <p>
+           Name: {{ product.name }}
+        </p>
+
+        <p>
+            Description: {{ product.description }}
+        </p>
+        <p>
+            Brand: {{ product.brand }}
+        </p>
+        <p>
+            Model: {{ product.model }}
+        </p>
+        <p>
+            Items:
+            {% for item in items %}
+                {{ item.code }}
+            {% endfor %}
+        </p>
+        <p>
+            Location:
+            {% for item in items %}
+                {{ item.location }}
+            {% endfor %}
+        </p>
+    </div>
+</div>
+{% endblock %}
